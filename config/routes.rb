@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :users , :path => 'test'
+  #resources :users , :path => 'test'
+  resources :users , :path => 'khfuzfb5se27bnk47igffxywgffe84872fggeawqaassf698kewodbxdw'
 
   root 'users#home'
 
