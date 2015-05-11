@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @exists = User.user_exists(params[:email])
+    @exists = User.user_exists(user_params[:email])
     respond_to do |format|
       if !@exists
         if @user.save

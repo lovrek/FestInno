@@ -4,12 +4,10 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/ , message: 'E-mali ni pravilen.'}
 
   def self.user_exists(email)
-    if email != ''
-      return false
-    elsif User.where(:email => email).count == 0
-      return false
-    else
+    if User.where(:email => email).count != 0
       return true
+    else
+      return false
     end
   end
 
