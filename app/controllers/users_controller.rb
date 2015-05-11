@@ -41,7 +41,7 @@ class UsersController < ApplicationController
           format.html { redirect_to root_path, notice: 'Uspesno ste se prijavili na dogodek "Studentski zajterk".' }
           format.json { render :show, status: :created, location: @user }
         else
-          format.html { render :new }
+          format.html { redirect_to prijava_path }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       else
@@ -60,7 +60,6 @@ class UsersController < ApplicationController
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
-        #   format.html { redirect_to root_path, notice: 'Na dogodek si ze prijavljen.' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
